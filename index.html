@@ -47,7 +47,11 @@
 
 		<!-- Header -->
 		<header class="header header-hidden shadow-bg">
-			<div class="site-logo"><a href="#0" class="animatescroll-link" onclick="$('html').animatescroll();">NoobSaibot-jpg</a></div>
+			<div class="site-logo"><a href="#0" class="animatescroll-link" onclick="$('html').animatescroll();">MankoDev</a></div>
+			<div class="language-switcher">
+				<a href="#" class="lang-btn active" data-lang="en">EN</a>
+				<a href="#" class="lang-btn" data-lang="uk">UK</a>
+			</div>
 			<div class="menu-bar waves-effect waves-light"><span class="fa fa-bars"></span></div>
 		</header>
 		<!--/ Header -->
@@ -57,11 +61,12 @@
 		<nav class="main-nav hidden hero-height">
 			<div class="menu-close waves-effect waves-light"><span class="fa fa-times"></span></div>
 			<ul>
-				<li><a href="#0" class="animatescroll-link" onclick="$('html').animatescroll();">Home</a></li>
-				<li><a href="#0" class="skill-section-nav animatescroll-link" onclick="$('#skill-section').animatescroll();">Skill</a></li>
-				<li><a href="#0" class="education-section-nav animatescroll-link" onclick="$('#education-section').animatescroll();">Education</a></li>
-				<li><a href="#0" class="experience-section-nav animatescroll-link" onclick="$('#experience-section').animatescroll();">Experience</a></li>
-				<li><a href="#0" class="contact-section-nav animatescroll-link" onclick="$('#contact-section').animatescroll();">Contact</a></li>
+				<li><a href="#0" class="animatescroll-link" onclick="$('html').animatescroll();" data-translate="home">Home</a></li>
+				<li><a href="#0" class="skill-section-nav animatescroll-link" onclick="$('#skill-section').animatescroll();" data-translate="skill">Skill</a></li>
+				<li><a href="#0" class="education-section-nav animatescroll-link" onclick="$('#education-section').animatescroll();" data-translate="education">Education</a></li>
+				<li><a href="#0" class="experience-section-nav animatescroll-link" onclick="$('#experience-section').animatescroll();" data-translate="experience">Experience</a></li>
+				<li><a href="#0" class="projects-section-nav animatescroll-link" onclick="$('#projects-section').animatescroll();" data-translate="projects">Projects</a></li>
+				<li><a href="#0" class="contact-section-nav animatescroll-link" onclick="$('#contact-section').animatescroll();" data-translate="contact">Contact</a></li>
 			</ul>
 		</nav>
 		<!--/ Nav Menu -->
@@ -85,29 +90,29 @@
 									<div class="about-img-content image-bg shadow-bg layer" data-depth="0.1" data-image-bg="img/me.jpg">
 										<a href="resume/me_resume.pdf" class="btn-circle tooltipped layer shadow-bg" data-position="top" data-delay="50" data-tooltip="Download Resume" data-depth="0.25"><span class="fa fa-download"></span></a>
 									</div>
-									<div class="about-name">Timofej Manko</div>
-									<div class="about-title">Front-end developer</div>
+									<div class="about-name" data-translate="about-name">Timofii Manko</div>
+									<div class="about-title">Full Stack Developer</div>
 								</div>
 								<div class="col m7 s12 about-data-wrapper pd-50">
 									<div class="about-desc pd-0">
-										<div class="about-section-title">About Me</div>
+										<div class="about-section-title" data-translate="about-me">About Me</div>
 										<div class="about-data">
-											<p>
-												Hi my name is Timofej. I'm front-end developer from Kharkiv Ukraine
+											<p data-translate="about-text">
+												Hi, I'm Timofii, a Full Stack Developer from Kharkiv, Ukraine. I specialize in building modern web applications using JavaScript/React for the frontend and Python/Node.js for the backend. With expertise in both client and server-side development, I create robust and scalable solutions that deliver exceptional user experiences.
 											</p>
 											
 
-											<div><span>Age</span>26</div>
-											<div><span>Address</span>Kharkiv, Ukraine</div>
-											<div><span>Email</span>kra4kas@gmail.com</div>
-											<div><span>Phone</span>+380 66 879 46 20</div>
-											<div><span>Website</span>https://noobsaibot-jpg.github.io/</div>
+											<div><span data-translate="age">Age</span>30</div>
+											<div><span data-translate="address">Address</span>Kharkiv, Ukraine</div>
+											<div><span data-translate="email">Email</span>kra4kas@gmail.com</div>
+											<div><span data-translate="phone">Phone</span>+380 66 879 46 20</div>
+											<div><span data-translate="website">Website</span>https://noobsaibot-jpg.github.io/</div>
 										</div>
 									</div>
 								</div>
 								<div class="about-social col s12 pd-0">
 									<a class="waves-effect waves-light" href="https://www.facebook.com/timofey.manko"><span class="fa fa-facebook"></span></a>
-									<a class="waves-effect waves-light" href="https://twitter.com/NoobSaidot"><span class="fa fa-twitter"></span></a>
+									<!-- <a class="waves-effect waves-light" href="https://twitter.com/NoobSaidot"><span class="fa fa-twitter"></span></a> -->
 									<a class="waves-effect waves-light" href="https://github.com/NoobSaibot-jpg"><span class="fa fa-github"></span></a>
 									<a class="waves-effect waves-light" href="https://t.me/kra4kas"><span class="fa fa-telegram"></span></a>
 								</div>
@@ -125,7 +130,7 @@
 			<div class="container">
 				<div class="row">
 					<div class="col s12 section-title">
-						<h2>Skill</h2>
+						<h2 data-translate="skill-title">Skill</h2>
 					</div>
 					<div class="col s12">
 						<div class="col s12 section-content skill-wrapper w-block shadow-bg pdt-50 pdr-40 pdb-50 pdl-40">
@@ -136,11 +141,11 @@
 								<!-- Single Skill -->
 								<div class="progress-bar-wrapper">
 									<p class="progress-text">
-										Javscript
-										<span>60%</span>
+										JavaScript/Node.js
+										<span>80%</span>
 									</p>
 									<div class="progress-bar">
-										<span data-percent="60"></span>
+										<span data-percent="80"></span>
 									</div>
 								</div>
 								<!--/ Single Skill -->
@@ -149,10 +154,10 @@
 								<div class="progress-bar-wrapper">
 									<p class="progress-text">
 										ReactJS
-										<span>60%</span>
+										<span>75%</span>
 									</p>
 									<div class="progress-bar">
-										<span data-percent="60"></span>
+										<span data-percent="75"></span>
 									</div>
 								</div>
 								<!--/ Single Skill -->
@@ -160,11 +165,11 @@
 								<!-- Single Skill -->
 								<div class="progress-bar-wrapper">
 									<p class="progress-text">
-										HTML5
-										<span>60%</span>
+										Python/Django
+										<span>70%</span>
 									</p>
 									<div class="progress-bar">
-										<span data-percent="60"></span>
+										<span data-percent="70"></span>
 									</div>
 								</div>
 								<!--/ Single Skill -->
@@ -172,11 +177,47 @@
 								<!-- Single Skill -->
 								<div class="progress-bar-wrapper">
 									<p class="progress-text">
-										CSS3
-										<span>60%</span>
+										HTML5/CSS3
+										<span>85%</span>
 									</p>
 									<div class="progress-bar">
-										<span data-percent="60"></span>
+										<span data-percent="85"></span>
+									</div>
+								</div>
+								<!--/ Single Skill -->
+
+								<!-- Single Skill -->
+								<div class="progress-bar-wrapper">
+									<p class="progress-text">
+										FastAPI
+										<span>70%</span>
+									</p>
+									<div class="progress-bar">
+										<span data-percent="70"></span>
+									</div>
+								</div>
+								<!--/ Single Skill -->
+
+								<!-- Single Skill -->
+								<div class="progress-bar-wrapper">
+									<p class="progress-text">
+										Flask
+										<span>70%</span>
+									</p>
+									<div class="progress-bar">
+										<span data-percent="70"></span>
+									</div>
+								</div>
+								<!--/ Single Skill -->
+
+								<!-- Single Skill -->
+								<div class="progress-bar-wrapper">
+									<p class="progress-text">
+										Next.js
+										<span>65%</span>
+									</p>
+									<div class="progress-bar">
+										<span data-percent="65"></span>
 									</div>
 								</div>
 								<!--/ Single Skill -->
@@ -191,10 +232,10 @@
 								<div class="progress-bar-wrapper">
 									<p class="progress-text">
 										Bootstrap/MaterialUI
-										<span>50%</span>
+										<span>80%</span>
 									</p>
 									<div class="progress-bar">
-										<span data-percent="50"></span>
+										<span data-percent="80"></span>
 									</div>
 								</div>
 								<!--/ Single Skill -->
@@ -203,10 +244,10 @@
 								<div class="progress-bar-wrapper">
 									<p class="progress-text">
 										SASS/SCSS
-										<span>70%</span>
+										<span>75%</span>
 									</p>
 									<div class="progress-bar">
-										<span data-percent="70"></span>
+										<span data-percent="75"></span>
 									</div>
 								</div>
 								<!--/ Single Skill -->
@@ -215,10 +256,10 @@
 								<div class="progress-bar-wrapper">
 									<p class="progress-text">
 										Git/GitHub
-										<span>60%</span>
+										<span>80%</span>
 									</p>
 									<div class="progress-bar">
-										<span data-percent="60"></span>
+										<span data-percent="80"></span>
 									</div>
 								</div>
 								<!--/ Single Skill -->
@@ -226,11 +267,11 @@
 								<!-- Single Skill -->
 								<div class="progress-bar-wrapper">
 									<p class="progress-text">
-										Python
-										<span>20%</span>
+										REST APIs
+										<span>75%</span>
 									</p>
 									<div class="progress-bar">
-										<span data-percent="20"></span>
+										<span data-percent="75"></span>
 									</div>
 								</div>
 								<!--/ Single Skill -->
@@ -251,7 +292,7 @@
 			<div class="container">
 				<div class="row">
 					<div class="col s12 section-title">
-						<h2>Education</h2>
+						<h2 data-translate="education-title">Education</h2>
 					</div>
 					<div class="col s12">
 						<div class="col s12 section-content pd-0">
@@ -266,7 +307,7 @@
 										<div class="timeline-tag">
 											MK KhNMU
 										</div>
-										<div class="timeline-title timeline-title-alt">
+										<div class="timeline-title timeline-title-alt" data-translate="medical-business">
 											Medical busines
 										</div>
 										<div class="timeline-time">2011-2015</div>
@@ -283,7 +324,7 @@
 										<div class="timeline-tag">
 											NTU KhPI
 										</div>
-										<div class="timeline-title timeline-title-alt">
+										<div class="timeline-title timeline-title-alt" data-translate="computer-modeling">
 											Department of Computer Modeling, Design and Computer Graphics
 										</div>
 										<div class="timeline-time">2021</div>
@@ -301,7 +342,7 @@
 										<div class="timeline-tag">
 											Udemy
 										</div>
-										<div class="timeline-title timeline-title-alt">
+										<div class="timeline-title timeline-title-alt" data-translate="web-developer">
 											Web-developer 2021
 										</div>
 										<div class="timeline-time">2021</div>
@@ -318,7 +359,7 @@
 										<div class="timeline-tag">
 											Udemy
 										</div>
-										<div class="timeline-title timeline-title-alt">
+										<div class="timeline-title timeline-title-alt" data-translate="react-developer">
 											React developer
 										</div>
 										<div class="timeline-time">2022</div>
@@ -341,7 +382,7 @@
 			<div class="container">
 				<div class="row">
 					<div class="col s12 section-title">
-						<h2>Experience</h2>
+						<h2 data-translate="experience-title">Experience</h2>
 					</div>
 					<div class="col s12">
 						<div class="col s12 section-content pd-0">
@@ -355,18 +396,62 @@
 										<div class="timeline-tag">
 											OSC 'Project AO'
 										</div>
-										<div class="timeline-title timeline-title-alt">
+										<div class="timeline-title timeline-title-alt" data-translate="engineer">
 											Engineer
 										</div>
 										<div class="timeline-desc">
-											<p>
+											<p data-translate="telegram-bot">
 												Creating a Telegram bot, testing fire detectors
 											</p>
 										</div>
-										<div class="timeline-time">2019-Present</div>
+										<div class="timeline-time">2019-2022</div>
 									</div>
 								</li>
 								<!--/ Single Experience - Right Side -->
+
+								<!-- Single Experience - Right Side -->
+								<li class="timeline-inverted wow fadeIn" data-wow-duration="0.5s" data-wow-delay="0.3s" data-wow-offset="0">
+									<div class="timeline-badge">
+										<a><i class="fa fa-circle"></i></a>
+									</div>
+									<div class="timeline-panel w-block shadow-bg pd-30">
+										<div class="timeline-tag">
+											LLC ScanData
+										</div>
+										<div class="timeline-title timeline-title-alt" data-translate="software-developer">
+											Software Developer
+										</div>
+										<div class="timeline-desc">
+											<p data-translate="api-development">
+												API Development, Developed software for data processing (images and PDFs)
+											</p>
+										</div>
+										<div class="timeline-time">2025 – Present</div>
+									</div>
+								</li>
+								<!--/ Single Experience - Right Side -->
+
+								<!-- Single Experience - Left Side -->
+								<li class="timeline wow fadeIn" data-wow-duration="0.5s" data-wow-delay="0.3s" data-wow-offset="0">
+									<div class="timeline-badge">
+										<a><i class="fa fa-circle"></i></a>
+									</div>
+									<div class="timeline-panel w-block shadow-bg pd-30">
+										<div class="timeline-tag">
+											IT - DOCUMENTUM LLC
+										</div>
+										<div class="timeline-title timeline-title-alt" data-translate="software-developer">
+											Software Developer
+										</div>
+										<div class="timeline-desc">
+											<p data-translate="document-management">
+												Developed software for data processing (images and PDFs), created electronic archives and registries
+											</p>
+										</div>
+										<div class="timeline-time">2023 – Present</div>
+									</div>
+								</li>
+								<!--/ Single Experience - Left Side -->
 
 							    <li class="clearfix no-float"></li>
 							</ul>
@@ -377,6 +462,59 @@
 		</section>
 		<!--/ Experience Section -->
 
+		<!-- Projects Section -->
+		<section id="projects-section" class="projects-section">
+			<div class="container">
+				<div class="row">
+					<div class="col s12 section-title">
+						<h2 data-translate="featured-projects">Featured Projects</h2>
+					</div>
+					<div class="col s12">
+						<div class="projects-wrapper">
+							<div class="row">
+								<!-- Scan Data Project -->
+								<div class="col s12 m6">
+									<div class="project-item">
+										<div class="project-image">
+											<img src="img/scan-data.jpg" alt="Scan Data Project">
+										</div>
+										<div class="project-content">
+											<h3 class="project-title">
+												<a href="https://scan-data.vercel.app/" target="_blank">Scan Data</a>
+											</h3>
+											<p class="project-description">
+												Web application for scanning and processing data using modern technologies.
+											</p>
+											<a href="https://scan-data.vercel.app/" class="project-link" target="_blank" data-translate="view-project">View Project</a>
+										</div>
+									</div>
+								</div>
+								
+								<!-- IT Documentum Project -->
+								<div class="col s12 m6">
+									<div class="project-item">
+										<div class="project-image">
+											<img src="img/itdocumentum.jpg" alt="IT Documentum Project">
+										</div>
+										<div class="project-content">
+											<h3 class="project-title">
+												<a href="https://itdocumentum.com.ua/" target="_blank">IT Documentum</a>
+											</h3>
+											<p class="project-description">
+												Document management and business process system for company workflow optimization.
+											</p>
+											<a href="https://itdocumentum.com.ua/" class="project-link" target="_blank" data-translate="view-project">View Project</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!--/ Projects Section -->
+
 	
 		
 		<!-- Contact Section -->
@@ -384,41 +522,41 @@
 			<div class="container">
 				<div class="row">
 					<div class="col s12 section-title">
-						<h2>Contact</h2>
+						<h2 data-translate="contact-title">Contact</h2>
 					</div>
 					<div class="col s12 pd-0 mgt-20">
 						
 						<div class="col s12 contact-form">
 							<div class="col s12 w-block shadow-bg pd-40">
-								<form id="c-form" class="c-form" action="#0" method="post" data-email-address="kra4kas@gmail.com" autocomplete="off">
+								<form id="c-form" class="c-form" action="cf-process.php" method="post" autocomplete="off">
 									<fieldset>
-										<input id="name" type="text" name="name" class="c-form-input" placeholder="Name">
-										<input id="email" type="text" name="email" class="c-form-input" placeholder="Email">
-										<input id="subject" type="text" name="subject" class="c-form-input" placeholder="Subject">
-										<textarea id="message" name="message" class="c-form-input" placeholder="Message"></textarea>
-										<button class="btn-custom waves-effect" type="submit" name="button">Send Message</button>
-										<span id="c-form-spinner" class="fa fa-circle-o-notch "></span>
+										<input id="name" type="text" name="name" class="c-form-input" placeholder="Name" required minlength="3" data-translate="name">
+										<input id="email" type="email" name="email" class="c-form-input" placeholder="Email" required data-translate="email">
+										<input id="subject" type="text" name="subject" class="c-form-input" placeholder="Subject" required minlength="3" data-translate="subject">
+										<textarea id="message" name="message" class="c-form-input" placeholder="Message" required minlength="3" data-translate="message"></textarea>
+										<button class="btn-custom waves-effect" type="submit" name="button" data-translate="send-message">Send Message</button>
+										<span id="c-form-spinner" class="fa fa-circle-o-notch"></span>
 									</fieldset>
 								</form>
 
 								<div class="c-form-alert hero-height">
 									<div class="alert-content alert-attention w-block">
 										<div class="alert-icon"><span class="fa fa-info-circle"></span></div>
-										<div class="alert-title">Attention</div>
-										<div class="alert-desc"><p>The name, subject and the message field must be at least 3 characters long. Make sure your email is valid too!</p></div>
-										<div class="alert-close"><a class="btn-custom waves-effect" href="#0">Close Me</a></div>
+										<div class="alert-title" data-translate="attention">Attention</div>
+										<div class="alert-desc"><p data-translate="attention-text">Please fill in all fields. The name, subject and message must be at least 3 characters long. Make sure your email is valid!</p></div>
+										<div class="alert-close"><a class="btn-custom waves-effect" href="#0" data-translate="close">Close</a></div>
 									</div>
 									<div class="alert-content alert-success w-block">
 										<div class="alert-icon alert-icon-success"><span class="fa fa-check-circle"></span></div>
-										<div class="alert-title">Success</div>
-										<div class="alert-desc"><p>Your message has been received! Thank you for writing.</p></div>
-										<div class="alert-close"><a class="btn-custom waves-effect" href="#0">Close Me</a></div>
+										<div class="alert-title" data-translate="success">Success</div>
+										<div class="alert-desc"><p data-translate="success-text">Your message has been sent successfully! Thank you for contacting me.</p></div>
+										<div class="alert-close"><a class="btn-custom waves-effect" href="#0" data-translate="close">Close</a></div>
 									</div>
 									<div class="alert-content alert-error w-block">
 										<div class="alert-icon"><span class="fa fa-times-circle"></span></div>
-										<div class="alert-title">Error</div>
-										<div class="alert-desc"><p>Message couldn't be sent due to server problem.</p></div>
-										<div class="alert-close"><a class="btn-custom waves-effect" href="#0">Close Me</a></div>
+										<div class="alert-title" data-translate="error">Error</div>
+										<div class="alert-desc"><p data-translate="error-text">There was an error sending your message. Please try again later.</p></div>
+										<div class="alert-close"><a class="btn-custom waves-effect" href="#0" data-translate="close">Close</a></div>
 									</div>
 								</div>
 							</div>
@@ -463,5 +601,6 @@
 		<script type="text/javascript" src="js/waypoints.min.js"></script>
 		<script type="text/javascript" src="js/wow.js"></script>
 		<script type="text/javascript" src="js/custom.js"></script>
+		<script type="text/javascript" src="js/main.js"></script>
 	</body>
 </html>

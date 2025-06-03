@@ -387,95 +387,99 @@
 	 Contact Form
 	 --------------------------------------------- */
 	function initContactForm(){
-		var receiver = $('#c-form').attr('data-email-address');
+		const contactForm = $('#c-form');
+		const formSpinner = $('#c-form-spinner');
+		const alertAttention = $('.alert-attention');
+		const alertSuccess = $('.alert-success');
+		const alertError = $('.alert-error');
 
-		var invalid_fields = [];
-
-		function validateEmail(email){
-			var regex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-			return regex.test(email.toLowerCase());
-		}
-
-		$("#c-form").on('submit', function (e){
+		// Remove any existing event listeners
+		contactForm.off('submit');
+		
+		// Add new submit handler
+		contactForm.on('submit', function(e) {
 			e.preventDefault();
-
-			$('#c-form-spinner').addClass('active');
-
-			var name = $("#name").val();
-			var email = $("#email").val();
-			var subject = $("#subject").val();
-			var message = $("#message").val();
-
-			if(name.length < 3){
-				invalid_fields.push('#name');
-			}else{
-				var name_index = invalid_fields.indexOf('#name');
-				if(name_index > -1){
-					invalid_fields.splice(name_index);
-				}
-			}
-			if(email == '' || validateEmail(email) == false){
-				invalid_fields.push('#email');
-			}else{
-				var email_index = invalid_fields.indexOf('#email');
-				if(email_index > -1){
-					invalid_fields.splice(email_index);
-				}
-			}
-			if(subject.length < 3){
-				invalid_fields.push('#subject');
-			}else{
-				var subject_index = invalid_fields.indexOf('#subject');
-				if(subject_index > -1){
-					invalid_fields.splice(subject_index);
-				}
-			}
-			if(message.length < 3){
-				invalid_fields.push('#message');
-			}else{
-				var message_index = invalid_fields.indexOf('#message');
-				if(message_index > -1){
-					invalid_fields.splice(message_index);
-				}
-			}
-
-			if(invalid_fields.length > 0){
-				$('.c-form-input').removeClass('invalid-field');
-				for(var i = 0; i < invalid_fields.length; i++){
-					$(invalid_fields[i]).addClass('invalid-field');
-				}
-				$('.c-form-alert').addClass('active');
-				$('.alert-attention').addClass('active');
-			}else{
-				$.ajax({
-					type: "POST",
-					url: "cf-process.php",
-					data: {
-						'name': name,
-						'email': email,
-						'message': message,
-						'subject': subject,
-						'receiver': receiver
-					},
-					success : function(text){
-						if (text === 'success'){
-							$('.c-form-alert').addClass('active');
-							$('.alert-success').addClass('active');
-							$('#c-form')[0].reset();
-							$('.c-form-input').removeClass('invalid-field');
-						}else{
-							$('.c-form-alert').addClass('active');
-							$('.alert-error').addClass('active');
+			e.stopPropagation();
+			
+			// Show spinner
+			formSpinner.addClass('fa-spin');
+			
+			// Get form data
+			const formData = new FormData(this);
+			
+			// Send AJAX request
+			$.ajax({
+				url: './cf-process.php',
+				type: 'POST',
+				data: formData,
+				processData: false,
+				contentType: false,
+				success: function(response) {
+					try {
+						const result = JSON.parse(response);
+						if (result.status === 'success') {
+							alertSuccess.addClass('active');
+							contactForm[0].reset();
+						} else {
+							alertError.find('.alert-desc p').text(result.message);
+							alertError.addClass('active');
 						}
+					} catch (e) {
+						console.error('Ошибка при обработке ответа:', e);
+						alertError.find('.alert-desc p').text('Ошибка при обработке ответа сервера');
+						alertError.addClass('active');
 					}
-				});
-			}
+				},
+				error: function(xhr, status, error) {
+					console.error('Ошибка отправки формы:', error);
+					let errorMessage = 'Ошибка при отправке формы. ';
+					
+					if (xhr.status === 405) {
+						errorMessage += 'Сервер не поддерживает метод POST. Убедитесь, что PHP-файл доступен и правильно настроен.';
+					} else if (xhr.status === 404) {
+						errorMessage += 'Файл обработчика формы не найден.';
+					} else {
+						errorMessage += 'Пожалуйста, попробуйте позже.';
+					}
+					
+					alertError.find('.alert-desc p').text(errorMessage);
+					alertError.addClass('active');
+				},
+				complete: function() {
+					formSpinner.removeClass('fa-spin');
+				}
+			});
+			
+			return false;
 		});
 
-		$('.alert-close a').on('click', function(){
-			$('.alert-content').removeClass('active');
-			$('.c-form-alert').removeClass('active');
-			$('#c-form-spinner').removeClass('active');
+		// Close alerts with proper event handling
+		$('.alert-close a').off('click').on('click', function(e) {
+			e.preventDefault();
+			e.stopPropagation();
+			$(this).closest('.alert-content').removeClass('active');
+			return false;
+		});
+
+		// Form validation with proper event handling
+		contactForm.find('input, textarea').off('input').on('input', function(e) {
+			const field = $(this);
+			const value = field.val().trim();
+			
+			if (field.attr('required') && value.length < 3) {
+				field.addClass('invalid');
+			} else {
+				field.removeClass('invalid');
+			}
+			
+			if (field.attr('type') === 'email' && value) {
+				const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+				if (!emailRegex.test(value)) {
+					field.addClass('invalid');
+				} else {
+					field.removeClass('invalid');
+				}
+			}
 		});
 	}
 
